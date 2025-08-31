@@ -1797,8 +1797,6 @@ vendor/etc/init/init.vendor.ins.rc
 vendor/etc/init/ipsec_mon.rc
 vendor/etc/init/lbs_hidl_service.rc
 vendor/etc/init/lights-mtk-default.rc
-vendor/etc/init/loghidlvendorservice.rc
-vendor/etc/init/md_monitor.rc
 vendor/etc/init/memtrack-mediatek.rc
 vendor/etc/init/mi_ic.rc
 vendor/etc/init/mi_ric.rc
