@@ -2029,7 +2029,7 @@ vendor/lib/libmsbc_mtk.so
 vendor/lib/libneuroeara.so
 vendor/lib/libneuron_graph_delegate.mtk.so
 vendor/lib/libneuropilot_hal_utils.so
-vendor/lib/libnir_neon_driver_ndk.mtk.vndk.so
+vendor/lib/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
 vendor/lib/libnwk_opt_halwrap_vendor.so
 vendor/lib/libnxp_extamp_intf.so
 vendor/lib/libnxpsmartpaparser.so
@@ -2224,7 +2224,7 @@ vendor/lib64/libneuroeara.so
 vendor/lib64/libneuron_graph_delegate.mtk.so
 vendor/lib64/libneuron_platform.so
 vendor/lib64/libneuropilot_hal_utils.so
-vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so
+vendor/lib64/libnir_neon_driver_ndk.mtk.vndk.so;FIX_SONAME
 vendor/lib64/libnwk_opt_halwrap_vendor.so
 vendor/lib64/libnxp_extamp_intf.so
 vendor/lib64/libnxpsmartpaparser.so
