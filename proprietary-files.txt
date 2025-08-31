@@ -1640,7 +1640,6 @@ vendor/etc/init/android.hardware.wifi.supplicant-service.rc
 vendor/etc/init/android.hardware.wifi@1.0-service-lazy.rc
 vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
 vendor/lib64/libwifi-hal.so
-vendor/lib64/vendor.mediatek.hardware.wifi.hostapd_ext@1.0.so
 
 # Wi-Fi (Firmware)
 vendor/firmware/wifi.cfg
@@ -1788,7 +1787,6 @@ vendor/etc/init/fuelgauged_nvram_init.rc
 vendor/etc/init/gbe.rc
 vendor/etc/init/getgameserver.rc
 vendor/etc/init/gsm0710muxd.rc
-vendor/etc/init/hostapd.android.rc
 vendor/etc/init/init.bip_ap.rc
 vendor/etc/init/init.charge_logger.rc
 vendor/etc/init/init.factory.rc
