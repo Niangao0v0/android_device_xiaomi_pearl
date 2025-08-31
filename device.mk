@@ -77,9 +77,6 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
-
-# Boot Control
-PRODUCT_PACKAGES += \  
 # Boot Control
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl \
