@@ -4,12 +4,14 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit generic_ramdisk product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # A/B
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 33
@@ -18,6 +20,18 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=$(BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE) \
+    POSTINSTALL_OPTIONAL_system=true
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_vendor=true \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
+    FILESYSTEM_TYPE_vendor=$(BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE) \
+    POSTINSTALL_OPTIONAL_vendor=true
 
 PRODUCT_PACKAGES += \
     checkpoint_gc \
@@ -83,6 +97,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_BUILD_SUPER_PARTITION := true
 
 # Product characteristics
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -102,6 +117,7 @@ $(call soong_config_set,power_libperfmgr,mode_extension_lib,//$(LOCAL_PATH):libp
 # Init
 PRODUCT_PACKAGES += \
     fstab.mt6895 \
+    fstab.mt6895.vendor_ramdisk \
     fstab.zram \
     init.aee.rc \
     init.batterysecret.rc \
@@ -123,6 +139,9 @@ PRODUCT_PACKAGES += \
     meta_init.vendor.rc \
     multi_init.rc \
     ueventd.mt6895.rc
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init/init.recovery.mt6895.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6895.rc
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
