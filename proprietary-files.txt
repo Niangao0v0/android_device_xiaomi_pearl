@@ -1633,6 +1633,7 @@ vendor/firmware/aw8697_haptic.bin
 
 # Wi-Fi
 vendor/bin/hw/android.hardware.wifi@1.0-service-lazy
+vendor/bin/wlan_assistant
 vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/wlan_assistant.rc
 vendor/etc/init/android.hardware.wifi.supplicant-service.rc
