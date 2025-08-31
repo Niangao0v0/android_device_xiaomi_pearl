@@ -2045,7 +2045,7 @@ vendor/lib/libscltm.so
 vendor/lib/libsensor_cal.so
 vendor/lib/libsimlock.so
 vendor/lib/libsimmelock.so
-vendor/lib/libspeech_enh_lib.so
+vendor/lib/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib/libspeechparser_vendor.so
 vendor/lib/libssccalapi.so
 vendor/lib/libtflite_mtk.so
@@ -2244,7 +2244,7 @@ vendor/lib64/libsimlock.so
 vendor/lib64/libsimmelock.so
 vendor/lib64/libsmartcharging.so
 vendor/lib64/libsn100u_fw.so
-vendor/lib64/libspeech_enh_lib.so
+vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/libssccalapi.so
 vendor/lib64/libstorage_otp.so
