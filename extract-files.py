@@ -129,6 +129,14 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libprocessgroup_shim.so')
         .replace_needed('libavservices_minijail_vendor.so', 'libavservices_minijail.so'),
 
+    'vendor/lib/libh264enc_sa.ca7.so': blob_fixup()
+        .clear_symbol_version('__aeabi_memclr')
+        .clear_symbol_version('__aeabi_memclr4')
+        .clear_symbol_version('__aeabi_memcpy')
+        .clear_symbol_version('__aeabi_memcpy4')
+        .clear_symbol_version('__aeabi_memset')
+        .clear_symbol_version('__gnu_Unwind_Find_exidx'),
+
 }  # fmt: skip
 
 module = ExtractUtilsModule(
