@@ -160,6 +160,9 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('__aeabi_memset')
         .clear_symbol_version('__gnu_Unwind_Find_exidx'),
 
+    ('vendor/lib/hw/vendor.xiaomi.sensor.citsensorservice@1.1-impl.so',
+     'vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@1.1-impl.so'):blob_fixup()
+        .add_needed('libui_shim.so'),
 
 }  # fmt: skip
 
