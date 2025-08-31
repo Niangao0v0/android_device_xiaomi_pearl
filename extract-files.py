@@ -104,7 +104,8 @@ blob_fixups: blob_fixups_user_type = {
 
     ('vendor/lib/libvcodec_oal.so',
      'vendor/lib/libthha.so',
-     'vendor/lib/libmp4enc_xa.ca7.so'
+     'vendor/lib/libmp4enc_xa.ca7.so',
+     'vendor/lib/libvp9dec_sa.ca7.so',
      'vendor/lib64/libvcodec_oal.so',
      'vendor/lib64/libthha.so'): blob_fixup()
         .clear_symbol_version('__aeabi_memcpy')
@@ -152,6 +153,12 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('__aeabi_memset')
         .clear_symbol_version('__gnu_Unwind_Find_exidx'),
 
+    'vendor/lib/libvp8dec_sa.ca7.so': blob_fixup()
+        .clear_symbol_version('__aeabi_memcpy')
+        .clear_symbol_version('__aeabi_memcpy4')
+        .clear_symbol_version('__aeabi_memmove')
+        .clear_symbol_version('__aeabi_memset')
+        .clear_symbol_version('__gnu_Unwind_Find_exidx'),
 
 
 }  # fmt: skip
