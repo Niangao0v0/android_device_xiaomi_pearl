@@ -26,6 +26,6 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 WITH_GMS := false
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildFingerprint="pearl-user 15 AP3A.240905.015.A2 OS2.0.205.0.VLHCNXM release-keys"
+    BuildFingerprint="xiaomi/pearl/pearl:15/AP3A.240905.015.A2/OS2.0.205.0.VLHCNXM:user/release-keys"
 
 BUILD_FINGERPRINT := Xiaomi/pearl/pearl:15/AP3A.240905.015.A2/OS2.0.205.0.VLHCNXM:user/release-keys
