@@ -98,7 +98,8 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib/nfc_nci.nqx.default.hw.v1.so',
      'vendor/lib64/libnvram.so',
      'vendor/lib64/libsysenv.so',
-     'vendor/lib/nfc_nci.nqx.default.hw.v1.so'): blob_fixup()
+     'vendor/lib/nfc_nci.nqx.default.hw.v1.so',
+     'vendor/bin/ioprofiler'): blob_fixup()
         .add_needed('libbase_shim.so'),
 
     ('vendor/lib/libvcodec_oal.so',
