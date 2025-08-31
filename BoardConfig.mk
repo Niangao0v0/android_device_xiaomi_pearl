@@ -77,13 +77,16 @@ TARGET_KERNEL_CLANG_VERSION := r530567
 TARGET_KERNEL_CONFIG := \
 	gki_defconfig \
 	pearl_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/mt6896-common
+TARGET_KERNEL_SOURCE := kernel/xiaomi/mt6895
+
+TARGET_KERNEL_DTB := \
+    vendor/mediatek/mt6895.dtb
 
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
 # Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_FORCE_PREBUILT_KERNEL := false
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilts/dtb.img
