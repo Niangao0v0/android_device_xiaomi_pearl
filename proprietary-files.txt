@@ -37,15 +37,9 @@ vendor/lib64/vendor.mediatek.hardware.audio@8.1.so
 vendor/lib/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib/soundfx/libdynproc.so
 vendor/lib/soundfx/libmisoundfx.so
-vendor/lib/soundfx/libswdap.so
-vendor/lib/soundfx/libswgamedap.so
-vendor/lib/soundfx/libswvqe.so
 vendor/lib64/soundfx/libaudiopreprocessing_mtk.so
 vendor/lib64/soundfx/libdynproc.so
 vendor/lib64/soundfx/libmisoundfx.so
-vendor/lib64/soundfx/libswdap.so
-vendor/lib64/soundfx/libswgamedap.so
-vendor/lib64/soundfx/libswvqe.so
 
 # Audio configs
 vendor/etc/a2dp_audio_policy_configuration.xml
@@ -747,12 +741,6 @@ vendor/lib/vendor.xiaomi.hardware.micharge@1.0.so
 vendor/lib64/hw/vendor.xiaomi.hardware.micharge@1.0-impl.so
 vendor/lib64/vendor.xiaomi.hardware.micharge@1.0.so
 
-# CIT
-vendor/bin/hw/vendor.xiaomi.cit.wifi@1.0-service
-vendor/etc/init/vendor.xiaomi.cit.wifi@1.0-service.rc
-vendor/etc/vintf/manifest/vendor.xiaomi.cit.wifi@1.0_manifest.xml
-vendor/lib64/vendor.xiaomi.cit.wifi@1.0.so
-
 # Connectivity
 vendor/bin/conninfra_loader
 vendor/etc/init/init.connfem.rc
@@ -1053,8 +1041,6 @@ vendor/lib/libadpcmdec_mtk.so
 vendor/lib/libalacdec_mtk.so
 vendor/lib/libformatter.so
 vendor/lib/libmp3dec_mtk.so
-vendor/lib/libstagefright_soft_ac4dec.so
-vendor/lib/libstagefright_soft_ddpdec.so
 vendor/lib/libstagefrightdolby.so
 vendor/lib/libstagefrighthw.so
 vendor/lib/libHEVCdec_sa.ca7.android.so;DISABLE_CHECKELF
@@ -1071,8 +1057,6 @@ vendor/lib64/libadpcmdec_mtk.so
 vendor/lib64/libalacdec_mtk.so
 vendor/lib64/libformatter.so
 vendor/lib64/libmp3dec_mtk.so
-vendor/lib64/libstagefright_soft_ac4dec.so
-vendor/lib64/libstagefright_soft_ddpdec.so
 vendor/lib64/libstagefrightdolby.so
 vendor/lib64/libstagefrighthw.so
 vendor/lib64/libhevce_sb.ca7.android.so
@@ -1109,25 +1093,16 @@ vendor/lib64/libcodec2_vpp_qt_plugin.so
 vendor/lib64/libcodec2_vpp_rs_plugin.so
 
 # Media (Dolby)
-vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
 vendor/etc/dolby/dax-default.xml
-vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
-vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml
 vendor/etc/dolby_vision.cfg
 vendor/lib/libdapparamstorage.so
-vendor/lib/libdeccfg.so
 vendor/lib/libdolbyeglplugin.so
 vendor/lib/libdolbyottcameracontrol.so
 vendor/lib/libdolbyplugin.so
-vendor/lib/vendor.dolby.hardware.dms@2.0.so
 vendor/lib64/libdapparamstorage.so
-vendor/lib64/libdeccfg.so
-vendor/lib64/libdlbdsservice.so
 vendor/lib64/libdolbyeglplugin.so
 vendor/lib64/libdolbyottcameracontrol.so
 vendor/lib64/libdolbyplugin.so
-vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
-vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 
 # Media (MMS)
 vendor/bin/hw/vendor.mediatek.hardware.mms@1.6-service
@@ -1264,14 +1239,6 @@ vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
 
-# NFC
-vendor/bin/hw/vendor.nxp.hardware.nfc@2.0-service
-vendor/etc/init/vendor.nxp.hardware.nfc@2.0-service.rc
-vendor/lib/nfc_nci.nqx.default.hw.v1.so
-vendor/lib/vendor.nxp.hardware.nfc@2.0.so
-vendor/lib64/nfc_nci.nqx.default.hw.v1.so
-vendor/lib64/vendor.nxp.hardware.nfc@2.0.so
-
 # NFC (Firmware)
 vendor/lib/libsn100u_fw.so
 
@@ -1302,7 +1269,6 @@ vendor/etc/sn100u_pnx_pcv.pnscr
 vendor/etc/sn100u_pnx_sst.pnscr
 
 # NVRAM
-
 vendor/bin/hw/vendor.mediatek.hardware.nvram@1.1-service
 vendor/bin/nvram_daemon
 vendor/etc/init/nvram_daemon.rc
@@ -1492,14 +1458,6 @@ vendor/etc/sensors/hals.conf
 vendor/etc/sensors/lightSensorCali.json
 vendor/etc/sensors/lightSensorConfig.json
 
-# SLA
-vendor/bin/hw/vendor.qti.sla.service@1.0-service
-vendor/etc/init/vendor.qti.sla.service@1.0-service.rc
-vendor/lib/vendor.qti.sla.service@1.0-impl.so
-vendor/lib/vendor.qti.sla.service@1.0.so
-vendor/lib64/vendor.qti.sla.service@1.0-impl.so
-vendor/lib64/vendor.qti.sla.service@1.0.so
-
 # Soter
 product/app/SoterService/SoterService.apk
 vendor/bin/SoterProvisioningTool_mitee
@@ -1618,15 +1576,6 @@ vendor/bin/hw/android.hardware.usb@1.2-service-mediatekv2
 vendor/etc/init/android.hardware.usb@1.2-service-mediatekv2.rc
 vendor/etc/vintf/manifest/android.hardware.usb@1.2-service-mediatekv2.xml
 
-# Vibrator
-vendor/bin/hw/android.hardware.vibrator-service.mediatek
-vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
-vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
-vendor/lib/hw/vibrator.default.so
-vendor/lib64/hw/vibrator.default.so
-vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so
-
 # Vibrator firmware
 vendor/firmware/aw8697_haptic.bin
 
@@ -1656,29 +1605,14 @@ vendor/etc/wifi/wpa_supplicant.conf
 vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Miscellaneous
-odm/bin/mrmd_mitee
 odm/bin/vib_cal
 odm/lib/libhdrmode.so
-odm/lib/libmiriskmanager_mitee.so
-odm/lib/vendor.xiaomi.hardware.mrm-V1-ndk_platform.so
 odm/lib64/libhdrmode.so
-odm/lib64/libmiriskmanager_mitee.so
-odm/lib64/vendor.xiaomi.hardware.mrm-V1-ndk_platform.so
 vendor/bin/hw/mfp-daemon
 vendor/bin/hw/vendor.mediatek.hardware.aee@1.1-service
 vendor/bin/hw/vendor.mediatek.hardware.nwk_opt@1.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.cld@1.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.dtool@1.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.mimd@1.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.miperf@1.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.misys@1.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.misys@2.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.misys@3.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.misys@4.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.secure_element@1.2-service
-vendor/bin/hw/vendor.xiaomi.hidl.minet@1.0-service
-vendor/bin/hw/vendor.xiaomi.hidl.miwill@1.0-service
-vendor/bin/hw/vendor.xiaomi.hw.touchfeature@1.0-service
 vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@1.1-service
 vendor/bin/hw/vendor.xiaomi.sensor.communicate@1.0-service
 vendor/bin/mt6895/dumpfaultd.mt6895;SYMLINK=vendor/bin/dumpfaultd.mt6895
@@ -1729,7 +1663,6 @@ vendor/bin/md_monitor
 vendor/bin/md_monitor_ctrl
 vendor/bin/mec
 vendor/bin/meta_tst
-vendor/bin/minetd
 vendor/bin/mrdump_tool
 vendor/bin/mt6660_calibration
 vendor/bin/mtk_pkm_service
@@ -1757,12 +1690,9 @@ vendor/bin/testgameserver
 vendor/bin/thermal_core
 vendor/bin/thermal_intf
 vendor/bin/toucheventcheck
-vendor/bin/vendor.xiaomi.hardware.mikeybag-service
-vendor/bin/vendor.xiaomi.hardware.otrpagent@2.0-service
 vendor/bin/volte_clientapi_ua
 vendor/bin/volte_rcs_ua
 vendor/bin/vpud
-vendor/bin/vsimd_mitee
 vendor/bin/wifi_dump
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
@@ -1798,7 +1728,6 @@ vendor/etc/init/lbs_hidl_service.rc
 vendor/etc/init/lights-mtk-default.rc
 vendor/etc/init/mi_ic.rc
 vendor/etc/init/mi_ric.rc
-vendor/etc/init/minetd.rc
 vendor/etc/init/mtk_pkm_service.rc
 vendor/etc/init/mtklog.rc
 vendor/etc/init/muxreport.rc
@@ -1807,21 +1736,8 @@ vendor/etc/init/slad.rc
 vendor/etc/init/smartcharging_init.rc
 vendor/etc/init/vendor.mediatek.hardware.aee@1.1-service.rc
 vendor/etc/init/vendor.mediatek.hardware.nwk_opt@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.cld@1.0-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.dtool@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.mikeybag-miteeservice.rc
-vendor/etc/init/vendor.xiaomi.hardware.mimd@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.miperf@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.misys@3.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.misys@4.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.otrpagent@2.0-service.rc
 vendor/etc/init/vendor.xiaomi.hardware.secure_element@1.2-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.vsimapp@1.0-miteeservice.rc
-vendor/etc/init/vendor.xiaomi.hidl.minet@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hidl.miwill@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hw.touchfeature@1.0-service.rc
 vendor/etc/init/vendor.xiaomi.sensor.citsensorservice@1.1-service.rc
 vendor/etc/init/vendor.xiaomi.sensor.communicate@1.0-service.rc
 vendor/etc/init/vibrator-mtk-default.rc
@@ -1848,16 +1764,6 @@ vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
 vendor/etc/vintf/manifest/lights-mtk-default.xml
 vendor/etc/vintf/manifest/manifest_hwcomposer.xml
 vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
-vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.cld.xml
-vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mikeybag.xml
-vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.otrpagent@2.0.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.mimd@1.0-service.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.miperf@1.0.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@1.0.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@2.0.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@3.0.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@4.0.xml
-vendor/etc/vintf/manifest/vendor.xiaomi.hw.touchfeature@1.0-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice@1.1-service.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.sensor.communicate@1.0_manifest.xml
 vendor/etc/1-SN1X0_SPC.txt
@@ -1888,7 +1794,6 @@ vendor/etc/gbe.cfg
 vendor/etc/init.insmod.mt6895.cfg
 vendor/etc/init.panel_info.sh
 vendor/etc/meow.cfg
-vendor/etc/mimdconfig
 vendor/etc/miperf_actvity_cfg.xml
 vendor/etc/miperf_app_cfg.xml
 vendor/etc/miperf_contable.xml
@@ -1927,13 +1832,6 @@ vendor/firmware/mali_csffw_reload.bin
 vendor/firmware/mono.cnt
 vendor/lib/hw/audio_policy.stub.so
 vendor/lib/hw/thermal_hal.so
-vendor/lib/hw/vendor.xiaomi.hardware.cld@1.0-impl.so
-vendor/lib/hw/vendor.xiaomi.hardware.miperf@1.0-impl.so
-vendor/lib/hw/vendor.xiaomi.hardware.misys@1.0-impl.so
-vendor/lib/hw/vendor.xiaomi.hardware.misys@2.0-impl.so
-vendor/lib/hw/vendor.xiaomi.hardware.misys@3.0-impl.so
-vendor/lib/hw/vendor.xiaomi.hardware.misys@4.0-impl.so
-vendor/lib/hw/vendor.xiaomi.hw.touchfeature@1.0-impl.so
 vendor/lib/hw/vendor.xiaomi.sensor.citsensorservice@1.1-impl.so
 vendor/lib/mt6895/lib3a.af.assist.models1d.so;SYMLINK=vendor/lib/lib3a.af.assist.models1d.so
 vendor/lib/mt6895/lib3a.af.assist.models2d.so;SYMLINK=vendor/lib/lib3a.af.assist.models2d.so
@@ -1992,7 +1890,6 @@ vendor/lib/libaurisysdemo.so
 vendor/lib/libbessound_hd_mtk_vendor.so
 vendor/lib/libblisrc32_vendor.so
 vendor/lib/libcapctrl.so
-vendor/lib/libcheckpid.so
 vendor/lib/libclient2slpi.notifier.so
 vendor/lib/libcom.xiaomi.metadatautils.so
 vendor/lib/libcom.xiaomi.pluginutils.so
@@ -2055,7 +1952,6 @@ vendor/lib/libvp8enc_sa.ca7.so;DISABLE_CHECKELF
 vendor/lib/libvp9dec_sa.ca7.so
 vendor/lib/libvpu5.so
 vendor/lib/libvpud_vcodec.so
-vendor/lib/libvsim_mitee.so
 vendor/lib/libwapi.so
 vendor/lib/libwpa_client.so
 vendor/lib/meta_wifi_data.so
@@ -2063,30 +1959,10 @@ vendor/lib/vendor.mediatek.hardware.apmonitor@2.0.so
 vendor/lib/vendor.mediatek.hardware.apuware.utils@2.0.so
 vendor/lib/vendor.mediatek.hardware.mdmonitor@1.0.so
 vendor/lib/vendor.mediatek.hardware.nwk_opt@1.0.so
-vendor/lib/vendor.xiaomi.hardware.cld@1.0.so
-vendor/lib/vendor.xiaomi.hardware.mikeybag-V1-ndk_platform.so
-vendor/lib/vendor.xiaomi.hardware.mikeybag-impl.so
-vendor/lib/vendor.xiaomi.hardware.miperf@1.0.so
-vendor/lib/vendor.xiaomi.hardware.misys@1.0.so
-vendor/lib/vendor.xiaomi.hardware.misys@2.0.so
-vendor/lib/vendor.xiaomi.hardware.misys@3.0.so
-vendor/lib/vendor.xiaomi.hardware.misys@4.0.so
-vendor/lib/vendor.xiaomi.hardware.vsimapp@1.0.so
-vendor/lib/vendor.xiaomi.hidl.minet@1.0-impl.so
-vendor/lib/vendor.xiaomi.hidl.minet@1.0.so
-vendor/lib/vendor.xiaomi.hidl.miwill@1.0-impl.so
-vendor/lib/vendor.xiaomi.hidl.miwill@1.0.so
 vendor/lib/vendor.xiaomi.sensor.citsensorservice@1.1.so
 vendor/lib64/hw/audio_policy.stub.so
 vendor/lib64/hw/thermal_hal.so
 vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.cld@1.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.miperf@1.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.misys@1.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.misys@2.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.misys@3.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.misys@4.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hw.touchfeature@1.0-impl.so
 vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@1.1-impl.so
 vendor/lib64/mt6895/lib3a.af.assist.models1d.so;SYMLINK=vendor/lib64/lib3a.af.assist.models1d.so
 vendor/lib64/mt6895/lib3a.af.assist.models2d.so;SYMLINK=vendor/lib64/lib3a.af.assist.models2d.so
@@ -2177,7 +2053,6 @@ vendor/lib64/libc++_shared.so
 vendor/lib64/libbessound_hd_mtk_vendor.so
 vendor/lib64/libblisrc32_vendor.so
 vendor/lib64/libcapctrl.so
-vendor/lib64/libcheckpid.so
 vendor/lib64/libclient2slpi.notifier.so
 vendor/lib64/libcom.xiaomi.metadatautils.so
 vendor/lib64/libcom.xiaomi.pluginutils.so
@@ -2249,7 +2124,6 @@ vendor/lib64/libvow_ap_test_hh.so
 vendor/lib64/libvow_ap_test_nn.so
 vendor/lib64/libvpu.so
 vendor/lib64/libvpu5.so
-vendor/lib64/libvsim_mitee.so
 vendor/lib64/libwapi.so
 vendor/lib64/libwifitest.so
 vendor/lib64/libwpa_client.so
@@ -2268,22 +2142,6 @@ vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 vendor/lib64/vendor.mediatek.hardware.log@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mdmonitor@1.0.so
 vendor/lib64/vendor.mediatek.hardware.nwk_opt@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.cld@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.dtool@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.mikeybag-V1-ndk_platform.so
-vendor/lib64/vendor.xiaomi.hardware.mikeybag-impl.so
-vendor/lib64/vendor.xiaomi.hardware.mimd@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.miperf@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so
-vendor/lib64/vendor.xiaomi.hardware.misys@3.0.so
-vendor/lib64/vendor.xiaomi.hardware.misys@4.0.so
-vendor/lib64/vendor.xiaomi.hardware.otrpagent@2.0-impl.so
-vendor/lib64/vendor.xiaomi.hardware.otrpagent@2.0.so
-vendor/lib64/vendor.xiaomi.hardware.vsimapp@1.0.so
-vendor/lib64/vendor.xiaomi.hidl.minet@1.0-impl.so
-vendor/lib64/vendor.xiaomi.hidl.minet@1.0.so
-vendor/lib64/vendor.xiaomi.hidl.miwill@1.0-impl.so
-vendor/lib64/vendor.xiaomi.hidl.miwill@1.0.so
 vendor/lib64/vendor.xiaomi.sensor.citsensorservice@1.1.so
 vendor/lib64/vendor.xiaomi.sensor.communicate@1.0.so
