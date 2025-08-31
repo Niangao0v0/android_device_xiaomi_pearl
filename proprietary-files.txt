@@ -1060,6 +1060,8 @@ vendor/lib/libstagefright_soft_ac4dec.so
 vendor/lib/libstagefright_soft_ddpdec.so
 vendor/lib/libstagefrightdolby.so
 vendor/lib/libstagefrighthw.so
+vendor/lib/libHEVCdec_sa.ca7.android.so;DISABLE_CHECKELF
+vendor/lib/libhevce_sb.ca7.android.so
 vendor/lib64/libMtkOmxCore.so
 vendor/lib64/libadpcmdec_mtk.so
 vendor/lib64/libalacdec_mtk.so
@@ -1069,6 +1071,7 @@ vendor/lib64/libstagefright_soft_ac4dec.so
 vendor/lib64/libstagefright_soft_ddpdec.so
 vendor/lib64/libstagefrightdolby.so
 vendor/lib64/libstagefrighthw.so
+vendor/lib64/libhevce_sb.ca7.android.so
 
 # Media (C2)
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek
@@ -1966,7 +1969,6 @@ vendor/lib/mt6895/libnir_neon_driver.so;SYMLINK=vendor/lib/libnir_neon_driver.so
 vendor/lib/mt6895/libpq_cust_base.so;SYMLINK=vendor/lib/libpq_cust_base.so
 vendor/lib/mt6895/libvcodec_utility.so;SYMLINK=vendor/lib/libvcodec_utility.so
 vendor/lib/mt6895/libvcodecdrv.so;SYMLINK=vendor/lib/libvcodecdrv.so
-vendor/lib/libHEVCdec_sa.ca7.android.so
 vendor/lib/libMtkSpeechEnh.so
 vendor/lib/lib_iir.so
 vendor/lib/lib_speech_enh.so
@@ -2014,7 +2016,6 @@ vendor/lib/libh264dec_sd.ca7.so
 vendor/lib/libh264dec_se.ca7.so
 vendor/lib/libh264enc_sa.ca7.so
 vendor/lib/libhdrvideo.so
-vendor/lib/libhevce_sb.ca7.android.so
 vendor/lib/libhfmanagerwrapper.so
 vendor/lib/libicd_decoder.so
 vendor/lib/libipsec_ims_shr.so
@@ -2206,7 +2207,6 @@ vendor/lib64/libfgauge_gm30.so
 vendor/lib64/libflash_compare.so
 vendor/lib64/libfvaudio.so
 vendor/lib64/libhdrvideo.so
-vendor/lib64/libhevce_sb.ca7.android.so
 vendor/lib64/libhfmanagerwrapper.so
 vendor/lib64/libhmp_custom.so
 vendor/lib64/libicd_decoder.so
