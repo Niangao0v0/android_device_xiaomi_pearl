@@ -83,6 +83,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.pearl.rc",
+    src: "init.pearl.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.sensor_2_0.rc",
     src: "init.sensor_2_0.rc",
     sub_dir: "init/hw",
@@ -109,3 +116,4 @@ prebuilt_etc {
     src: "fstab.zram",
     vendor: true,
 }
+
