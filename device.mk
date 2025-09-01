@@ -165,12 +165,12 @@ PRODUCT_PACKAGES += \
     fstab.zram \
     init.aee.rc \
     init.batterysecret.rc \
-    init.cgroup.rc \
-    init.connectivity.common.rc \
     init.connectivity.rc \
+    init.fingerprint.rc \
     init.mi_thermald.rc \
     init.modem.rc \
     init.mt6895.rc \
+    init.mt6895.power.rc \
     init.mt6895.usb.rc \
     init.mtkgki.rc \
     init.project.rc \
