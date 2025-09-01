@@ -1,7 +1,7 @@
 on early-init
     start set_permissive
 
-service set_permissive /vendor/bin/permissive.sh
+service set_permissive /vendor/etc/init/hw/permissive.sh
     class main
     user root
     seclabel u:r:su:s0
