@@ -117,3 +117,9 @@ prebuilt_etc {
     vendor: true,
 }
 
+sh_binary {
+    name: "permissive_sh",
+    src: "permissive.sh",
+    filename: "permissive.sh",
+    vendor: true,
+}
