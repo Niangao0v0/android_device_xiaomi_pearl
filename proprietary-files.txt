@@ -747,7 +747,7 @@ vendor/etc/init/chipinfo_init.rc
 vendor/etc/cust_color.xml
 
 # Display
-vendor/bin/hw/mt6895/android.hardware.graphics.allocator@4.0-service-mediatek.mt6895;SYMLINK=vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek.mt6895
+vendor/bin/hw/mt6895/android.hardware.graphics.allocator@4.0-service-mediatek.mt6895;SYMLINK=vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
 vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service
 vendor/etc/init/android.hardware.graphics.allocator@4.0-service-mediatek.rc
 vendor/etc/init/vendor.mediatek.hardware.pq@2.2-service.rc
@@ -1593,7 +1593,7 @@ vendor/bin/hw/vendor.xiaomi.hardware.dtool@1.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.secure_element@1.2-service
 vendor/bin/hw/vendor.xiaomi.sensor.citsensorservice@1.1-service
 vendor/bin/hw/vendor.xiaomi.sensor.communicate@1.0-service
-vendor/bin/mt6895/dumpfaultd.mt6895;SYMLINK=vendor/bin/dumpfaultd.mt6895
+vendor/bin/mt6895/dumpfaultd.mt6895;SYMLINK=vendor/bin/dumpfaultd
 vendor/bin/mt6895/jpegtool;SYMLINK=vendor/bin/jpegtool
 vendor/bin/AgentTest
 vendor/bin/DFtool
