@@ -1769,7 +1769,6 @@ vendor/etc/excluded-input-devices.xml
 vendor/etc/factory.ini
 vendor/etc/fstb.cfg
 vendor/etc/gbe.cfg
-vendor/etc/init.insmod.mt6895.cfg
 vendor/etc/init.panel_info.sh
 vendor/etc/meow.cfg
 vendor/etc/miperf_actvity_cfg.xml
