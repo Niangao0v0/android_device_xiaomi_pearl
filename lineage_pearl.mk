@@ -20,6 +20,10 @@ PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := 23054RA19C
 PRODUCT_MANUFACTURER := Xiaomi
 
+PRODUCT_SYSTEM_NAME := pearl
+PRODUCT_SYSTEM_DEVICE := pearl
+PRODUCT_CHARACTERISTICS := nosdcard
+
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # ROM Flags
@@ -28,4 +32,6 @@ WITH_GMS := false
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint="xiaomi/pearl/pearl:15/AP3A.240905.015.A2/OS2.0.205.0.VLHCNXM:user/release-keys"
 
+# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := Xiaomi/pearl/pearl:15/AP3A.240905.015.A2/OS2.0.205.0.VLHCNXM:user/release-keys
+

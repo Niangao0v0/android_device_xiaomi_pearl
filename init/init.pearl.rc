@@ -7,4 +7,3 @@ service set_permissive /vendor/etc/init/hw/permissive.sh
     seclabel u:r:su:s0
     disabled
     oneshot
-

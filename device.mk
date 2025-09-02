@@ -16,13 +16,30 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
-# API levels
-PRODUCT_SHIPPING_API_LEVEL := 33
+# Shipping API Level
+PRODUCT_SHIPPING_API_LEVEL := 31
+
+# Platform
+TARGET_BOARD_PLATFORM := mt6895
+BOARD_HAS_MTK_HARDWARE := true
+BOARD_VENDOR := xiaomi
+DEVICE_PATH := device/xiaomi/pearl
+BOARD_TEE_VARIANT := mitee
+
+# File System
+ifeq ($(WITH_GMS),true)
+PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE ?= erofs
+else
+PRODUCT_SYSTEM_PARTITIONS_FILE_SYSTEM_TYPE ?= ext4
+endif
 
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -39,6 +56,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
+
+PRODUCT_PACKAGES += \
+    create_pl_dev \
+    create_pl_dev.recovery
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -146,9 +167,6 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := true
 
-# Product characteristics
-PRODUCT_CHARACTERISTICS := nosdcard
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
@@ -159,9 +177,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
+
 $(call soong_config_set,power_libperfmgr,mode_extension_lib,//$(LOCAL_PATH):libperfmgr-ext-xiaomi)
 
-# Init
+# Rootdir
 PRODUCT_PACKAGES += \
     fstab.mt6895 \
     fstab.mt6895.vendor_ramdisk \
@@ -185,15 +204,22 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.recovery.mt6895.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.mt6895.rc
 
+# USB
+$(call soong_config_set,android_hardware_mediatek_usb,audio_accessory_supported,true)
+PRODUCT_PACKAGES += \
+    android.hardware.usb-service.mediatek \
+    android.hardware.usb@1.3.vendor \
+    android.hardware.usb.gadget@1.1.vendor
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/mediatek \
+    hardware/xiaomi \
     hardware/google/pixel \
     hardware/google/interfaces \
     hardware/lineage/interfaces/power-libperfmgr \
-    hardware/mediatek \
-    hardware/mediatek/libmtkperf_client \
-    hardware/xiaomi
+    hardware/mediatek/libmtkperf_client
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/pearl/pearl-vendor.mk)
