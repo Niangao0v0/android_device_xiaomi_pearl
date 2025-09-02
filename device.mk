@@ -211,6 +211,11 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.3.vendor \
     android.hardware.usb.gadget@1.1.vendor
 
+# Vndservice
+PRODUCT_PACKAGES += \
+    vndservice \
+    vndservicemanager
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
