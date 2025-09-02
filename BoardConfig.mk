@@ -160,7 +160,10 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 
 # Sepolicy
-include device/mediatek/seplicy_vndr/SEPolicy.mk
+include device/mediatek/sepolicy_vndr/SEPolicy.mk
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # VNDK
 BOARD_VNDK_VERSION := current
