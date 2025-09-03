@@ -171,23 +171,17 @@ PRODUCT_PACKAGES += \
     NfcOverlayPearl \
     SettingsProviderOverlayPearl \
     SystemUIResOverlayPearl \
-    WifiResOverlayPearl
-
-PRODUCT_PACKAGES += \
-    LineageApertureOverlayPearl \
-    LineageDialerOverlayPearl \
-    LineageSDKOverlayPearl
-
-# Common Overlays
-PRODUCT_PACKAGES += \
+    WifiResOverlayPearl \
     FrameworksResOverlayMT6895 \
-    PowerOffAlarmOverlayMT6895 \
     SettingsOverlayMT6895 \
     SettingsProviderResOverlayMT6895 \
     SystemUIOverlayMT6895 \
     WifiResOverlayMT6895
 
 PRODUCT_PACKAGES += \
+    LineageApertureOverlayPearl \
+    LineageDialerOverlayPearl \
+    LineageSDKOverlayPearl \
     LineageApertureOverlayMT6895 \
     LineageSettingsOverlayMT6895 \
     LineageDialerMT6895 \
@@ -257,6 +251,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 $(call soong_config_set,power_libperfmgr,mode_extension_lib,//$(LOCAL_PATH):libperfmgr-ext-xiaomi)
+
+# Properties
+include $(LOCAL_PATH)/vendor_logtag.mk
 
 # NFC
 PRODUCT_PACKAGES += \
