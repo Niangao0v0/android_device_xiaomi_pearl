@@ -961,8 +961,11 @@ vendor/etc/slp_conf
 vendor/lib/hw/gps.default.so
 vendor/lib/libviagpsrpc.so
 vendor/lib/librpc.so
-vendor/lib64/hw/gps.default.so
 vendor/lib64/hw/android.hardware.gnss-impl-mediatek.so
+vendor/lib64/hw/android.hardware.gnss@2.1-impl-mediatek.so
+vendor/lib64/hw/gps.default.so
+vendor/lib64/mt6895/libDR.so;SYMLINK=vendor/lib64/libDR.so
+vendor/lib64/mt6895/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
 vendor/lib64/librpc.so
 vendor/lib64/libviagpsrpc.so
 
@@ -1002,9 +1005,6 @@ vendor/etc/init/android.hardware.security.keymint-service.mitee.rc
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.mitee.xml
-
-# Light
-vendor/bin/hw/android.hardware.lights-service.mediatek
 
 # Local time
 vendor/lib/hw/local_time.default.so
@@ -1415,8 +1415,6 @@ vendor/lib64/se_nq_extn_client-v1.so
 
 # Sensors
 vendor/firmware/remoteproc_scp
-vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
-vendor/etc/init/android.hardware.sensors@2.0-service.multihal-mediatek.rc
 vendor/lib/hw/sensors.dynamic_sensor_hal.so
 vendor/lib/hw/sensors.elliptic@2.0.so
 vendor/lib/hw/sensors.mius.proximity.so
@@ -1738,7 +1736,6 @@ vendor/etc/sla/slad.conf
 vendor/etc/vintf/manifest/AHBF@2.1-service.xml
 vendor/etc/vintf/manifest/fod.xml
 vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
-vendor/etc/vintf/manifest/lights-mtk-default.xml
 vendor/etc/vintf/manifest/manifest_hwcomposer.xml
 vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
 vendor/etc/vintf/manifest/vendor.xiaomi.sensor.citsensorservice@1.1-service.xml
@@ -1942,7 +1939,6 @@ vendor/lib64/hw/vendor.mediatek.hardware.nvram@1.1-impl.so
 vendor/lib64/hw/vendor.xiaomi.sensor.citsensorservice@1.1-impl.so
 vendor/lib64/mt6895/lib3a.af.assist.models1d.so;SYMLINK=vendor/lib64/lib3a.af.assist.models1d.so
 vendor/lib64/mt6895/lib3a.af.assist.models2d.so;SYMLINK=vendor/lib64/lib3a.af.assist.models2d.so
-vendor/lib64/mt6895/libDR.so;SYMLINK=vendor/lib64/libDR.so
 vendor/lib64/mt6895/libaal_cust_func.so;SYMLINK=vendor/lib64/libaal_cust_func.so
 vendor/lib64/mt6895/libacdk.so;SYMLINK=vendor/lib64/libacdk.so
 vendor/lib64/mt6895/libaiawb_fs_model.so;SYMLINK=vendor/lib64/libaiawb_fs_model.so
@@ -1974,7 +1970,6 @@ vendor/lib64/mt6895/libimgsys_traw.so;SYMLINK=vendor/lib64/libimgsys_traw.so
 vendor/lib64/mt6895/libimgsys_utils.so;SYMLINK=vendor/lib64/libimgsys_utils.so
 vendor/lib64/mt6895/libimgsys_wpe.so;SYMLINK=vendor/lib64/libimgsys_wpe.so
 vendor/lib64/mt6895/libmdla_ut.so;SYMLINK=vendor/lib64/libmdla_ut.so
-vendor/lib64/mt6895/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
 vendor/lib64/mt6895/libmtkcam.logicalmodule.so;SYMLINK=vendor/lib64/libmtkcam.logicalmodule.so
 vendor/lib64/mt6895/libmtkcam_modulefactory_custom.so;SYMLINK=vendor/lib64/libmtkcam_modulefactory_custom.so
 vendor/lib64/mt6895/libmtkcam_modulefactory_utils.so;SYMLINK=vendor/lib64/libmtkcam_modulefactory_utils.so
