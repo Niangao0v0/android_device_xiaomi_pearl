@@ -154,9 +154,8 @@ PRODUCT_PACKAGES += \
     libcppbor_external.vendor \
     libkeymint.vendor
 
-# Keylayout
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl
+# IMS
+$(call inherit-product, vendor/mediatek/ims/ims.mk)
 
 # Light
 PRODUCT_PACKAGES += \
@@ -181,6 +180,10 @@ PRODUCT_PACKAGES += \
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := true
+
+# Parts
+PRODUCT_PACKAGES += \
+    XiaomiParts
 
 # Permissions
 PRODUCT_COPY_FILES += \
