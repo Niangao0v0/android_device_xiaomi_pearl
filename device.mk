@@ -75,6 +75,9 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-impl
 
 PRODUCT_PACKAGES += \
+    MtkInCallService
+
+PRODUCT_PACKAGES += \
     libaudiopreprocessing \
     libbundlewrapper \
     libdownmix \
@@ -139,6 +142,13 @@ PRODUCT_PACKAGES += \
     android.hardware.health-service.mediatek \
     android.hardware.health-service.mediatek-recovery
 
+# IFAA manager
+PRODUCT_PACKAGES += \
+    IFAAService
+
+# IMS
+$(call inherit-product, vendor/mediatek/ims/ims.mk)
+
 # Keymaster
 PRODUCT_PACKAGES += \
     libkeymaster_messages.vendor \
@@ -150,9 +160,6 @@ PRODUCT_PACKAGES += \
     lib_android_keymaster_keymint_utils.vendor \
     libcppbor_external.vendor \
     libkeymint.vendor
-
-# IMS
-$(call inherit-product, vendor/mediatek/ims/ims.mk)
 
 # Light
 PRODUCT_PACKAGES += \
@@ -241,6 +248,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/permissions/privapp-permissions-com.mediatek.engineermode.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-com.mediatek.engineermode.xml
 
 # Power
 PRODUCT_PACKAGES += \
