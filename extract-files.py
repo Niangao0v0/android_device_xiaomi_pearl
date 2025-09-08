@@ -52,9 +52,7 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/mt6895/libmtkcam_request_requlator.so'): blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
 
-    ('vendor/lib64/lib3a.ae.pipe.so',
-     'vendor/lib64/mt6895/libaaa_toneutil.so',
-     'vendor/lib64/mt6895/lib3a.flash.so',
+    ('vendor/lib64/mt6895/lib3a.flash.so',
      'vendor/lib64/mt6895/lib3a.sensors.color.so',
      'vendor/lib64/mt6895/lib3a.sensors.flicker.so'): blob_fixup()
         .add_needed('liblog.so'),
@@ -78,11 +76,6 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/libsysenv.so',
      'vendor/bin/ioprofiler'): blob_fixup()
         .add_needed('libbase_shim.so'),
-
-     'vendor/lib64/libthha.so': blob_fixup()
-        .clear_symbol_version('__aeabi_memcpy')
-        .clear_symbol_version('__aeabi_memset')
-        .clear_symbol_version('__gnu_Unwind_Find_exidx'),
 
      'vendor/lib64/mt6895/libneuralnetworks_sl_driver_mtk_prebuilt.so': blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
@@ -139,6 +132,8 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc': blob_fixup()
         .regex_replace('start', 'enable'),
 
+    'vendor/etc/public.libraries.txt': blob_fixup()
+        .add_line_if_missing('libmpbase.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
@@ -147,7 +142,6 @@ module = ExtractUtilsModule(
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
-    add_firmware_proprietary_file=True,
 )
 
 if __name__ == '__main__':

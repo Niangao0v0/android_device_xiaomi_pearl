@@ -1,4 +1,4 @@
-# Unpinned blobs from missi-user 15 AP3A.240905.015.A2 OS2.0.205.0.VLHCNXM release-keys
+# Unpinned blobs from missi-user 15 AP3A.240905.015.A2 OS2.0.207.0.VLHCNXM release-keys
 
 # AEE
 vendor/lib64/libaedv.so
@@ -199,13 +199,6 @@ vendor/lib64/libbluetooth_mtk.so
 vendor/lib64/libbt-vendor.so
 
 # Bluetooth (A2DP)
-vendor/lib64/hw/android.hardware.bluetooth.audio@2.0-impl.so
-vendor/lib64/hw/android.hardware.bluetooth.audio@2.1-impl.so
-vendor/lib64/hw/audio.bluetooth.default.so
-vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.1-impl.so
-vendor/lib64/hw/vendor.mediatek.hardware.bluetooth.audio@2.2-impl.so
-vendor/lib64/libbluetooth_audio_session.so
-vendor/lib64/libbluetooth_audio_session_mediatek.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
@@ -912,6 +905,8 @@ vendor/lib64/libstagefrighthw.so
 # Media (C2)
 vendor/bin/hw/android.hardware.media.c2@1.2-mediatek-64b
 vendor/etc/init/android.hardware.media.c2@1.2-mediatek-64b.rc
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-extended-seccomp-policy
+vendor/etc/seccomp_policy/android.hardware.media.c2@1.2-mediatek-seccomp-policy
 vendor/etc/vintf/manifest/manifest_media_c2_V1_1_default.xml
 vendor/lib64/libcodec2_mtk_c2store.so
 vendor/lib64/libcodec2_mtk_vdec.so
@@ -1063,6 +1058,9 @@ vendor/lib64/vendor.mediatek.hardware.nvram@1.1.so
 # Power
 vendor/lib64/vendor.mediatek.hardware.power@1.1.so
 vendor/lib64/vendor.mediatek.hardware.power@2.0.so
+
+# Public libraries
+vendor/etc/public.libraries.txt
 
 # Tida
 vendor/bin/tidad_mitee@1.2
