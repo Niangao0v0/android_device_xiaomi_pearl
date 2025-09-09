@@ -162,6 +162,7 @@ mtk-pwm.ko
 mtk_irtx_pwm.ko
 widevine_driver.ko
 pmsr.ko
+xm_power_debug.ko
 spmtwam.ko
 sec.ko
 spmtwam.ko
