@@ -201,7 +201,6 @@ persist.vendor.radio.smart.data.switch=1
 persist.vendor.vonr_setting_support=1
 ro.telephony.default_network=33,33,33,33
 ro.telephony.iwlan_operation_mode=AP-assisted
-ro.telephony.sim.count=2
 ro.vendor.md_prop_ver=1
 ro.vendor.mtk_c2k_lte_mode=2
 ro.vendor.mtk_c2k_support=1
@@ -276,9 +275,6 @@ ro.hardware.kmsetkey=mitee
 ro.vendor.mtk_tee_gp_support=1
 ro.vendor.mtk_mitee_support=1
 ro.vendor.mtk_microtrust_tee_support=1
-
-# Verity
-ro.apk_verity.mode=2
 
 # Wi-Fi
 ro.vendor.wifi.sap.concurrent.iface=ap1
