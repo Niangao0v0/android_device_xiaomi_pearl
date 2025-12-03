@@ -893,8 +893,8 @@ vendor/etc/vintf/manifest/android.hardware.security.keymint-service.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.security.secureclock-service.mitee.xml
 vendor/etc/vintf/manifest/android.hardware.security.sharedsecret-service.mitee.xml
 
-# Keymint V3 NDK (from duchamp 15 AP3A.240905.015.A2 OS2.0.2.0)
-vendor/lib64/android.hardware.security.keymint-V3-ndk.so:vendor/lib64/android.hardware.security.keymint-V3-ndk-v34.so|5b9fdbe3e6871779512d6c0a5071499774896fd7
+# Keymint V3 NDK (from pearl 15 AP3A.240905.015.A2 OS2.0.207.0)
+vendor/lib64/android.hardware.security.keymint-V3-ndk.so:vendor/lib64/android.hardware.security.keymint-V3-ndk-v34.so|3eb9595a5898d1e9a305a7d630ceaa28720fd13c
 
 # Media
 vendor/lib64/libMtkOmxCore.so

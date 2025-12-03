@@ -29,6 +29,9 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 # ROM Flags
 WITH_GMS := false
 
+# Bootanimation Resolution.
+TARGET_BOOT_ANIMATION_RES := 1920
+
 # Enable DM file pre-opting to reduce first boot time
 # Note that this may significantly increase your compilation time!
 PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
@@ -38,4 +41,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := Xiaomi/pearl/pearl:15/AP3A.240905.015.A2/OS2.0.207.0.VLHCNXM:user/release-keys
-
