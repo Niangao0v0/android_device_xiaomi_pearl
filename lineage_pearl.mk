@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2025 The LineageOS Project
+# Copyright (C) 2023 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -8,11 +8,20 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
+# Inherit from pearl device
+$(call inherit-product, device/xiaomi/pearl/device.mk)
+
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from pearl device
-$(call inherit-product, device/xiaomi/pearl/device.mk)
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2460
+TARGET_SCREEN_WIDTH := 1080
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# ROM Flags
+TARGET_DISABLE_EPPE := true
+WITH_GMS := true
 
 PRODUCT_DEVICE := pearl
 PRODUCT_NAME := lineage_pearl
@@ -22,22 +31,10 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_SYSTEM_NAME := pearl
 PRODUCT_SYSTEM_DEVICE := pearl
-PRODUCT_CHARACTERISTICS := nosdcard
 
+PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# ROM Flags
-WITH_GMS := false
-
-# Bootanimation Resolution.
-TARGET_BOOT_ANIMATION_RES := 1920
-
-# Enable DM file pre-opting to reduce first boot time
-# Note that this may significantly increase your compilation time!
-PRODUCT_DEX_PREOPT_GENERATE_DM_FILES := true
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildFingerprint="Xiaomi/pearl/pearl:15/AP3A.240905.015.A2/OS2.0.207.0.VLHCNXM:user/release-keys"
-
-# Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := Xiaomi/pearl/pearl:15/AP3A.240905.015.A2/OS2.0.207.0.VLHCNXM:user/release-keys
+    BuildFingerprint=Xiaomi/pearl/pearl:15/AP3A.240905.015.A2/OS3.0.1.0.VLHCNXM:user/release-keys \
+    DeviceProduct=$(PRODUCT_SYSTEM_NAME)

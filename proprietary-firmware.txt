@@ -1,25 +1,21 @@
 ## All proprietary files from this list, unless pinned and noted otherwise,
-## are from OS2.0.207.0.VLHCNXM (pearl)
-# Unpinned blobs from missi-user 15 AP3A.240905.015.A2 OS2.0.207.0.VLHCNXM release-keys
+## are from missi-user 15 AP3A.240905.015.A2 OS3.0.1.0.VLHCNXM release-keys
 
+apusys.img;AB
+audio_dsp.img;AB
+ccu.img;AB
+dpm.img;AB
 dtbo.img;AB
-# Firmware blobs
-apusys.img;AB|9afcbb21cf55e6b23278fd069ccda4c60ccc32fa
-audio_dsp.img;AB|1507673d08072000a314ba1968ef02a094afaa18
-ccu.img;AB|9265da98bb5fc5ef9a92c364090c5a9d1f3ee9d8
-dpm.img;AB|e2337a6318934e105a4c4ab39c2136a6deaefa96
-gpueb.img;AB|0068f84c726abb0897ebd2559f237d3b2947ffd4
-gz.img;AB|1544220e2e8c78427cb4ced090191564838488d9
-lk.img;AB|b86004ceb975f1bed6c62de0fff20916c2a117d9
-logo.bin:logo.img;AB|49f4ae411a840932394ee4d295aebabfce8af901
-mcf_ota.img;AB|65f95bf37275ddaf58fa111d58e44ea27819c1d2
-mcupm.img;AB|09f3cb177688cf6480bbcea2bac9f10f61699328
-md1img.img;AB|b0aed0a3f65fd39efb53a9a1883ec9ad1f250ceb
-mvpu_algo.img;AB|5dce1ccbe669ac5c1a1b1beb5c716d17883c9822
-pi_img.img;AB|2d67c70742c5d61192805d214fee95cb22c81c66
-scp.img;AB|223271a32dbfb7e0642c7c097b668ce6aa8cc8cb
-spmfw.img;AB|3f272fdfece8a6177577a8ab74a935b1c0fe0ea9
-sspm.img;AB|cfcc0a4308b39e8e69921873a19ee95315d3c748
-tee.img;AB|c38a3d5d1b950b99ecffd4c8f5cd5c5513dad05b
-vcp.img;AB|d4f765039039edb229c5301961ced31be5bb2c50
-preloader_pearl.bin:preloader_raw.img;AB|ba111d466883b73906bbe79f050b9f51756b7e70
+gpueb.img;AB
+gz.img;AB
+lk.img;AB
+mcf_ota.img;AB
+mcupm.img;AB
+md1img.img;AB
+mvpu_algo.img;AB
+pi_img.img;AB
+scp.img;AB
+spmfw.img;AB
+sspm.img;AB
+tee.img;AB
+vcp.img;AB
