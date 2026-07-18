@@ -1,5 +1,13 @@
 目前已经知晓但未解决的问题：
 
+0. DTBO源码不可用。尽管编译产物和官方镜像的解包内容一模一样。
+   请注释掉device/xiaomi/mt6895-common/BoardConfig.mk中的BOARD_KERNEL_SEPARATED_DTBO=true，
+   移除A/B更新的dtbo分区，
+   注释掉TARGET_KERNEL_DTB中的dtbo行，仅保留SOC级dtb的编译。
+   内核中有关Pearl设备的DTBO生成选项已保持关闭状态。
+   除非您刷入了ENG Preloader,否则不要尝试测试内核里的dtbo源码。会导致开机无任何显示，连Redmi logo都没有。尽管编译后的解包产物和官方img一字不差。
+   欢迎提交PR修复，感谢!
+
 1. SElinux还处于宽容状态，否则无法开机
 
 2. keymint是软件实现，还未调用MI TEE环境
