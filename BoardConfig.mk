@@ -19,6 +19,9 @@ TARGET_SCREEN_DENSITY := 440
 BOARD_BOOTLOADER_IN_UPDATE_PACKAGE := true
 BOARD_SUPER_IMAGE_IN_UPDATE_PACKAGE := true
 
+# 测试：关闭SElinux
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+
 # Kernel
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load))
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.recovery))

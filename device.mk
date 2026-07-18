@@ -15,6 +15,15 @@ PRODUCT_BUILD_SUPER_PARTITION := true
 PRODUCT_FASTBOOT_TEMPLATE_ZIP := $(LOCAL_PATH)/prebuilts/fastboot.zip
 PRODUCT_FASTBOOT_IMAGES_PATH := images
 
+# Keymint 
+# 硬件Keymint-service.mitee是AIDL-V1接口的, 而Lineage23.2已经是AIDL-V4接口了, 强行改ELF NEEDED也是会出现未定义符号问题
+# 于是选择一个default软件实例让Android正常开机得了, 就是安全系数不高就是了
+# 关闭 StrongBox, 让 keystore2 只用 default 实例
+PRODUCT_PROPERTY_OVERRIDES += ro.hardware.strongbox=0
+# 打包软件实现的 default KeyMint 服务
+PRODUCT_PACKAGES += \
+    android.hardware.security.keymint-service
+
 # FM Radio
 PRODUCT_PACKAGES += \
     FMRadio
