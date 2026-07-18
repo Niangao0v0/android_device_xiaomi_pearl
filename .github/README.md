@@ -6,7 +6,7 @@
 
 3. 指纹不可用
 
-4. MindTheGApps无法adb sidload侧载
+4. MindTheGApps无法adb sideload侧载
 
 本项目将会持续开发。但出于一些时间原因，不一定能够及时修复Bug与跟进上游。
 
