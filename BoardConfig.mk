@@ -36,6 +36,9 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 
+# Framework Compatibility Matrix
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/vintf/pearl_framework_compatibility_matrix.xml
+
 # Inherit the proprietary files
 include vendor/xiaomi/pearl/BoardConfigVendor.mk
 
