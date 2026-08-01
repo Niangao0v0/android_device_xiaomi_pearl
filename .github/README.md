@@ -1,12 +1,17 @@
 目前已经知晓但未解决的问题：
 
 1. SElinux还处于宽容状态，否则无法开机
-
 2. keymint是软件实现，还未调用MI TEE环境
-
-3. 指纹不可用
-
-4. MindTheGApps无法adb sideload侧载
+3. MindTheGApps无法adb sideload侧载
+4. 定位只能偶尔搜到一枚GPS卫星，且不稳定
+5. NFC不可用
+6. Dolby全套软件不可用（包括音效、AC3,E-AC3,AC-4音视频编解码器、Dolby HDR等）
+7. 蓝牙5特性不全（缺少低功耗蓝牙音频支持）
+8. 锁屏密码无法设置
+9. 缺少输入设备："uinput-fpc"、"mt6895-mt6838 USB_3_5_Jack"
+10. 缺少SAR传感器：Semtech Sx9331
+11. 缺少Touch Sensor传感器：Xiaomi Large Area Detect
+12. NPU软件栈和AI应用有待完善
 
 本项目将会持续开发。但出于一些时间原因，不一定能够及时修复Bug与跟进上游。
 
