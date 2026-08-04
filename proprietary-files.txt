@@ -77,9 +77,10 @@ vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
 vendor/lib64/vendor.dolby.hardware.dms@2.0.so
 vendor/lib64/libstagefrightdolby.so
 
-# SoundFX (Dolby)
-vendor/lib64/soundfx/libswdap.so
-vendor/lib64/soundfx/libswgamedap.so
+# SoundFX (Dolby) (软件音效实现吧)
+# vendor/lib64/soundfx/libswdap.so
+# vendor/lib64/soundfx/libswgamedap.so
+# vendor/lib64/soundfx/libswvqe.so
 
 # Touch Sensor
 vendor/lib64/sensors.touch.detect.so
@@ -163,6 +164,10 @@ vendor/lib64/libasn1c_core.so
 vendor/lib64/libasn1c_mapi.so
 vendor/lib64/libasn1c_mdmi.so
 
+# IMS (GSM 07.10)
+vendor/bin/gsm0710muxd
+vendor/etc/init/gsm0710muxd.rc
+
 # Location Based Service
 vendor/bin/lbs_hidl_service
 vendor/etc/init/lbs_hidl_service.rc
@@ -173,6 +178,11 @@ vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 # Fingerprint
 vendor/bin/hw/mfp-daemon
 vendor/etc/init/init.mfp-daemon.rc
+
+# MTK Hifi(不工作，具体请参阅Document/MTK_hifi.md)
+system_ext/lib64/libaudiopolicycustomextensions.so
+system_ext/lib64/libaudiocompensationfilter.so
+system_ext/lib64/libaudioutilmtk.so
 
 # 以上是新加的
 
