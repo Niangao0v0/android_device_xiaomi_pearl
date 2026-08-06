@@ -82,40 +82,46 @@ ro.vendor.audio.hifi=true
 1. frameworks/av/services/audioflinger/AudioFlinger.cpp: 1731（未在deamonSamplingRate.tar.gz中）
 说明：Lineage会拦截应用向HAL发出的带有sampling_rate=%u字样的键，注释掉它
 
+```cpp
 - String8(AudioParameter::keySamplingRate), 
 + //String8(AudioParameter::keySamplingRate),
-
+```
 
 2. frameworks/av/services/audioflinger/Threads.h: 1677（在deamonSamplingRate.tar.gz中）
 
 说明：这里添加了两个成员，用于为后续的前导静音填充帧服务
+```cpp
 + protected:
 +     bool mNeedSilencePadding;          // 是否需要填充静音（true 表示需要）
 +     size_t mSilenceFramesRemaining;    // 剩余需要填充的静音帧数（每次递减）
-
+```
 
 3. frameworks/av/services/audioflinger/Threads.cpp（在deamonSamplingRate.tar.gz中）
 
 说明：这里初始化了以上两个前导静音填充帧成员
 2296: 
+```cpp
 - mIsTimestampAdvancing(kMinimumTimeBetweenTimestampChecksNs)
 + mIsTimestampAdvancing(kMinimumTimeBetweenTimestampChecksNs),
 + mNeedSilencePadding(false),
 + mSilenceFramesRemaining(0)
-
+```
 
 说明：这里的修改是为了向MTK的HAL传递HIFI键和采样率键
 2941: 
+```cpp
 + if ((mOutput->flags & AUDIO_OUTPUT_FLAG_DEEP_BUFFER) || (mOutput->flags & AUDIO_OUTPUT_FLAG_MMAP_NOIRQ)) {
 +   android::String8 params;
 +   params.appendFormat("hifi_state=1;sampling_rate=%u", track->sampleRate());
 +   AudioSystem::setParameters(mId, params);
 + }
+```
 
 
 说明：删除if内status == NO_ERROR的条件是因为，MTK的HAL设计之初就不是这么直接传递sampling_rate=%u键用的，
       所以他压根不会返回status == NO_ERROR。他不返回就没法进入以下刷新流程，音频播放就会出现异常。
 6550: 
+```cpp
 - if (status == NO_ERROR && reconfig) {
 + if (reconfig) {
 +   audio_output_flags_t flags = mOutput->flags;
@@ -128,10 +134,12 @@ ro.vendor.audio.hifi=true
 +       mNeedSilencePadding = true;//通知主循环下次写入时要先填静音
 +       // ========== 静音前导填充结束 ==========
 +   }
+```
 
 
 说明：这里实现了前导静音填充，以掩盖采样率切换后、音频播放最初的“噗”爆音。
 3572: 
+```cpp
 +   if (mNeedSilencePadding && mSilenceFramesRemaining > 0) {
 +       // ① 本次最多写一个周期的帧数（避免一次写太多）
 +       size_t framesToWrite = std::min(mSilenceFramesRemaining, (size_t)mNormalFrameCount);
@@ -167,3 +175,4 @@ ro.vendor.audio.hifi=true
 +       mInWrite = false;
 +       return written;  // 本次循环结束，不再写真实音频
 +   }
+```
