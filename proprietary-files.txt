@@ -803,9 +803,13 @@ vendor/firmware/novatek_nt36672e_l16s_mp01.bin:vendor_ramdisk/lib/firmware/novat
 vendor/firmware/novatek_nt36672e_l16s_mp02.bin
 vendor/firmware/novatek_nt36672e_l16s_mp02.bin:vendor_ramdisk/lib/firmware/novatek_nt36672e_l16s_mp02.bin
 vendor/firmware/novatek_ts_fw01.bin
+vendor/firmware/novatek_ts_fw01.bin:vendor_ramdisk/lib/firmware/vendor/firmware/novatek_ts_fw01.bin
 vendor/firmware/novatek_ts_fw02.bin
+vendor/firmware/novatek_ts_fw02.bin:vendor_ramdisk/lib/firmware/vendor/firmware/novatek_ts_fw02.bin
 vendor/firmware/novatek_ts_mp01.bin
+vendor/firmware/novatek_ts_mp01.bin:vendor_ramdisk/lib/firmware/vendor/firmware/novatek_ts_mp01.bin
 vendor/firmware/novatek_ts_mp02.bin
+vendor/firmware/novatek_ts_mp02.bin:vendor_ramdisk/lib/firmware/vendor/firmware/novatek_ts_mp02.bin
 
 # Trusted Execution Environment (TEE)
 vendor/mitee/ta/14b0aad8-c011-4a3f-b66aca8d0e66f273.ta
