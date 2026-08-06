@@ -180,9 +180,9 @@ vendor/bin/hw/mfp-daemon
 vendor/etc/init/init.mfp-daemon.rc
 
 # MTK Hifi(不工作，具体请参阅Document/MTK_hifi.md)
-system_ext/lib64/libaudiopolicycustomextensions.so
-system_ext/lib64/libaudiocompensationfilter.so
-system_ext/lib64/libaudioutilmtk.so
+# system_ext/lib64/libaudiopolicycustomextensions.so
+# system_ext/lib64/libaudiocompensationfilter.so
+# system_ext/lib64/libaudioutilmtk.so
 
 # 以上是新加的
 
