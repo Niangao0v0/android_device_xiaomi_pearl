@@ -13,8 +13,9 @@
 11. 缺少Touch Sensor传感器：Xiaomi Large Area Detect
 12. NPU软件栈和AI应用有待完善
 
-不太可能解决的问题：
-1. MTK hifi通路的移植 (见Documentation/MTK_hifi.md)
+正在测试的代码：
+1. MTK hifi通路的移植 (见Documentation/MTK_hifi/MTK_hifi.md)
+- 这里实现了类似MTK_Hifi的采样率随音频流切换逻辑，但是还有点小Bug.
 
 本项目将会持续开发。但出于一些时间原因，不一定能够及时修复Bug与跟进上游。
 
