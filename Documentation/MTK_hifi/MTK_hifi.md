@@ -69,11 +69,6 @@ vendor.prop中还要添加：ro.vendor.mtk_hifiaudio_support=1和ro.vendor.audio
 - 通过扬声器播放无法切换采样率。而且扬声器似乎不支持48000以上的采样率。
 - 仅测试了3.5mm输出，未测试其他硬件输出。
 
-已知问题：
-```
-MTK HAL的采样率有两档，48000及以下为低档，48000（不含）为高档
-1. 跨档位采样率切换时，第一次切换会无声，您需要在**同档位内**再切一次才能有声音。
-```
 -------------------------------------------------------
 - 使用前请确保device/xiaomi/mt6895-common/vendor.prop中
 
@@ -98,22 +93,34 @@ ro.vendor.audio.hifi=true
 - 一定要筛选音频流的FLAG，MTK的HAL压根没有对非deep_buffer音频流做采样率切换逻辑，这是切换初期爆音的根源。
 - 曾经尝试在切换初期**写全0静音帧**的做法只是**治标不治本**。
 
-2941: 
+2937: 
 ```cpp
 + if ((mOutput->flags & AUDIO_OUTPUT_FLAG_DEEP_BUFFER) || (mOutput->flags & AUDIO_OUTPUT_FLAG_MMAP_NOIRQ)) {
 +   android::String8 params;
 +   params.appendFormat("hifi_state=1;sampling_rate=%u", track->sampleRate());
-+   AudioSystem::setParameters(mId, params);
++   status = sendSetParameterConfigEvent_l(params);
 + }
 ```
 
 - 说明：删除if内status == NO_ERROR的条件是因为，MTK的HAL设计之初就不是这么直接传递sampling_rate=%u键用的，
--       所以他压根不会返回status == NO_ERROR。他不返回就没法进入以下刷新流程，音频播放就会出现变速、变调。
+- 所以他压根不会返回status == NO_ERROR。他不返回就没法进入以下刷新流程，音频播放就会出现变速、变调。
 
-6511: 
+6510: 
 ```cpp
 - if (status == NO_ERROR && reconfig) {
 + if (reconfig) {
+```
+
+- 说明：将音轨的主缓冲区重置为当前有效的 mSinkBuffer，使其回到普通混音路径，而不仅仅是打印日志。
+- MTK HAL的采样率有两档，48000及以下为低档，48000（不含）为高档。
+- 不更改此处会导致首次跨档位采样率切换时，第一次切换后无声。
+
+5940：
+```cpp
+- ALOGW("prepareTracks_l(): track(%d) attached to effect but no chain found on "
+-         "session %d",
+-         trackId, track->sessionId());
++ track->setMainBuffer(static_cast<float*>(mSinkBuffer));
 ```
 
 3. frameworks/av/media/libaudiohal/impl/StreamHalHidl.cpp: 477
@@ -133,6 +140,7 @@ ro.vendor.audio.hifi=true
 - if (bytes > bufferSize) bufferSize = bytes;
 ```
 
-- TODO: 最好的做法是在这里实现一套动态的音频流销毁与重新读取扩容逻辑。
+- TODO: 最好的做法是在这里实现一套动态的音频流检测buffer_size、销毁音频流、重新读取HAL值并扩容的逻辑。
 - 但是这涉及跨进程通信，搞不好的话HAL就会读写空指针然后崩溃重启。
+- 所以这一处修改没有普适性，需要为不同的Mediatek HAL手动硬编码最大值。
 - 欢迎各位有兴趣的同学优化代码！

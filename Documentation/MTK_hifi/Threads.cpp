@@ -2935,16 +2935,14 @@ status_t PlaybackThread::addTrack_l(const sp<IAfTrack>& track)
             // at this point, only the TrackHandle will be adding the track.
             float volume;
             bool muted;
-            mutex().unlock();
-
             //========== 为HAL传递键 ==============
             if ((mOutput->flags & AUDIO_OUTPUT_FLAG_DEEP_BUFFER) || (mOutput->flags & AUDIO_OUTPUT_FLAG_MMAP_NOIRQ)) {
-            android::String8 params;
-            params.appendFormat("hifi_state=1;sampling_rate=%u", track->sampleRate());
-            AudioSystem::setParameters(mId, params);
+                android::String8 params;
+                params.appendFormat("hifi_state=1;sampling_rate=%u", track->sampleRate());
+                status = sendSetParameterConfigEvent_l(params);
             }
             //==========  传递结束  ==============
-
+            mutex().unlock();
             status = AudioSystem::startOutput(track->portId(), &volume, &muted);
             mutex().lock();
             // abort track was stopped/paused while we released the lock
@@ -5939,9 +5937,10 @@ PlaybackThread::mixer_state MixerThread::prepareTracks_l(
                 if (chain != 0) {
                     tracksWithEffect++;
                 } else {
-                    ALOGW("prepareTracks_l(): track(%d) attached to effect but no chain found on "
-                            "session %d",
-                            trackId, track->sessionId());
+                    //ALOGW("prepareTracks_l(): track(%d) attached to effect but no chain found on "
+                    //        "session %d",
+                    //        trackId, track->sessionId());
+                    track->setMainBuffer(static_cast<float*>(mSinkBuffer));//将音轨的主缓冲区重置为当前有效的 mSinkBuffer，使其回到普通混音路径
                 }
             }
 
