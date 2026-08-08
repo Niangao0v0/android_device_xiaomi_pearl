@@ -15,7 +15,8 @@
 
 正在测试的代码：
 1. MTK hifi通路的移植 (见Documentation/MTK_hifi/MTK_hifi.md)
-- 这里实现了类似MTK_Hifi的采样率随音频流切换逻辑，但是还有点小Bug.
+- 这里实现了类似MTK_Hifi的采样率随音频流切换逻辑, 但是仍然走的mixer AOSP混音器.
+- 并且没有成功激活Hi-res标志，只是模仿了闭源Hi-res库切换采样率这一行为。
 
 本项目将会持续开发。但出于一些时间原因，不一定能够及时修复Bug与跟进上游。
 
