@@ -22,11 +22,6 @@ BOARD_SUPER_IMAGE_IN_UPDATE_PACKAGE := true
 # 测试：关闭SElinux
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
-# Use pearl's USB gadget configuration instead of the generic MediaTek rc.
-SOONG_CONFIG_NAMESPACES += mediatek_gadget
-SOONG_CONFIG_mediatek_gadget += use_custom_usb_gadget_rc
-SOONG_CONFIG_mediatek_gadget_use_custom_usb_gadget_rc := true
-
 # Kernel
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load))
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/modules.load.recovery))
@@ -48,4 +43,4 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/vintf/pearl_framewo
 include vendor/xiaomi/pearl/BoardConfigVendor.mk
 
 # Inherit from proprietary files for miuicamera
-include vendor/xiaomi/miuicamera-pearl/BoardConfig.mk
+# include vendor/xiaomi/miuicamera-pearl/BoardConfig.mk

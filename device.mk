@@ -44,9 +44,6 @@ PRODUCT_PACKAGES += \
     SystemUIResOverlayPearl \
     WifiResOverlayPearl
 
-# MIUI Camera
-$(call inherit-product, vendor/xiaomi/miuicamera-pearl/device.mk)
-
 # Rootdir
 PRODUCT_PACKAGES += \
     init.project.rc \
